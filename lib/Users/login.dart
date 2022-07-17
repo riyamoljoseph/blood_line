@@ -1,3 +1,4 @@
+import 'package:blood_line/Users/registration.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -143,12 +144,23 @@ class _LoginpageState extends State<Loginpage> {
                           ),
                         ),
                         SizedBox(height: 40,),
-                        MaterialButton(onPressed: (){},
-
+                  Container(
+                    height: MediaQuery.of(context).size.height*0.05,
+                    child:MaterialButton(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
 
                         ),
-                    ]
-                  ),
+                      child: Text("Login"),
+                      color: Colors.red,
+                        onPressed: () { Navigator.push(context, MaterialPageRoute(builder: (context)=>Reg()));
+                        },
+
+
+                    )
+                  )
+                  ]
+                  )
 
                 ),
 
