@@ -1,11 +1,22 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.blood_line">
+    package="com.example.blood_line"
+    android:versionCode="TODO">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+
    <application
+
         android:label="blood_line"
-        android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+
+
+       <meta-data android:name="com.google.android.geo.API_KEY"
+           android:value="AIzaSyCDrxHAyF7bmmH6SYysz67O_va77B03hRQ"/>
         <activity
             android:name=".MainActivity"
+
             android:exported="true"
             android:launchMode="singleTop"
             android:theme="@style/LaunchTheme"
@@ -18,7 +29,7 @@
                  to determine the Window background behind the Flutter UI. -->
             <meta-data
               android:name="io.flutter.embedding.android.NormalTheme"
-              android:resource="@style/NormalTheme"
+
               />
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
