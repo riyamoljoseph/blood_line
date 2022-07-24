@@ -156,7 +156,7 @@ class _RequestBloodState extends State<RequestBlood> {
                         color: Color.fromARGB(1000, 221, 46, 68),
                         child: Text("SUBMIT"),
 
-                        onPressed: () { Navigator.push(context, MaterialPageRoute(builder: (context)=>Maping()));
+                        onPressed: () {
                         },
                         shape: new RoundedRectangleBorder(
                             borderRadius: new BorderRadius.circular(30.0)),
