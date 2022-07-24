@@ -14,7 +14,7 @@ class _StockState extends State<Stock> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 239, 5, 13),
+          backgroundColor: Color.fromARGB(1000, 221, 46, 68),
           title: Text("stock"),
         ),
         body: ListView.builder(
@@ -41,7 +41,7 @@ class _StockState extends State<Stock> {
                             borderRadius: BorderRadius.all(Radius.circular(12)),
                           ),
                           child: Container(
-                            height: MediaQuery.of(context).size.height*0.09,
+                            height: MediaQuery.of(context).size.height*0.14,
                             width: MediaQuery.of(context).size.width,
 
                             child: Row(

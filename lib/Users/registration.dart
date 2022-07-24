@@ -1,6 +1,4 @@
 import 'package:blood_line/Users/donors.dart';
-import 'package:blood_line/Users/map.dart';
-import 'package:blood_line/Users/requestblood.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -17,6 +15,7 @@ class _RegState extends State<Reg> {
     return Scaffold(
         backgroundColor: Colors.white,
         appBar:AppBar(
+          backgroundColor: Color.fromARGB(1000, 221, 46, 68),
           title: Text("REGISTRATION"),titleTextStyle: TextStyle(color: Colors.black,fontSize: 16),
             actions: [
         Theme(
@@ -103,7 +102,7 @@ class _RegState extends State<Reg> {
 
                               ),
                               child: Text("Register as Donor"),
-                              color: Colors.red,
+                              color: Color.fromARGB(1000, 221, 46, 68),
                               onPressed: () {
                                 Navigator.push(context, MaterialPageRoute(builder: (context)=>Donor()));
                               },

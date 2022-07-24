@@ -14,7 +14,7 @@ class _ChatState extends State<Chat> {
         appBar: AppBar(
           elevation: 0,
           automaticallyImplyLeading: false,
-          backgroundColor: Colors.red,
+          backgroundColor: Color.fromARGB(1000, 221, 46, 68),
           flexibleSpace: SafeArea(
             child: Container(
               padding: EdgeInsets.only(right: 16),
@@ -87,7 +87,7 @@ class _ChatState extends State<Chat> {
                   FloatingActionButton(
                     onPressed: (){},
                     child: Icon(Icons.send,color: Colors.white,size: 18,),
-                    backgroundColor: Colors.red,
+                    backgroundColor: Color.fromARGB(1000, 221, 46, 68),
                     elevation: 0,
                   ),
                 ],
