@@ -1,91 +1,74 @@
-
 import 'package:flutter/material.dart';
+import 'package:flutter/src/foundation/key.dart';
+import 'package:flutter/src/widgets/framework.dart';
 
-class Stocks extends StatefulWidget {
-  const Stocks({Key? key}) : super(key: key);
+class Stock extends StatefulWidget {
+  const Stock({Key? key}) : super(key: key);
 
   @override
-  State<Stocks> createState() => _StocksState();
+  State<Stock> createState() => _StockState();
 }
 
-class _StocksState extends State<Stocks> {
+class _StockState extends State<Stock> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
-        appBar:AppBar(
-          title: Text("STOCKS"),titleTextStyle: TextStyle(color: Colors.black,fontSize: 16),
-          actions: [
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.more_vert),
-            ),
-          ],
-          backgroundColor: Colors.red,
+        appBar: AppBar(
+          backgroundColor: Color.fromARGB(255, 239, 5, 13),
+          title: Text("stock"),
         ),
-        body: SingleChildScrollView(
-        child:
-        Padding(
-    padding: const EdgeInsets.all(7.0),
-    child: Column(
-    children: [
-    Expanded(
-    child: ListView.builder(
-    shrinkWrap: true,
+        body: ListView.builder(
+            itemCount: 8,
+            itemBuilder: (BuildContext context, int index) {
+              return InkWell(
+                  onTap:(){
+                    // Navigator.push(context, MaterialPageRoute(builder: (context)=>));
+                  },
+                  child: Column(children: [
 
-    itemCount: 20,
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(8.0,4.0,8.0,4.0),
+                      child: InkWell(
+                        onTap: (){
+                          // Navigator.push(context, MaterialPageRoute (builder:(context)=>));
+                        },
 
-    itemBuilder: (BuildContext context,int index){
+                        child: Card(
 
-    return ClipRRect(
-    borderRadius: BorderRadius.circular(5),
-    child: Column(
-    children: [
-    Row(
-    children: [
-    Text("B+"),
-    SizedBox(
-    width: 5,
-    ),
-    Expanded(
-    child: Divider(
-    color: Colors.black,
-    ),
-    )
-    ],
+                          color: Colors.white70,
+                          elevation: 10,
+                          shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(12)),
+                          ),
+                          child: Container(
+                            height: MediaQuery.of(context).size.height*0.09,
+                            width: MediaQuery.of(context).size.width,
 
-    ),
-    Card(
-    color: Color(0xffa96a6a),
-    child: Row(
-    children: [
-    Flexible(child: Text("Task will be displayed with details provided by the admin.",
-      style: TextStyle(color: Colors.black,fontSize: 20),maxLines: 5,overflow: TextOverflow.fade,)),
+                            child: Row(
+                              children: [
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Icon(
+                                  Icons.bloodtype,
+                                  size: 22,
+                                ),
+                                SizedBox(
+                                  width: 14,
+                                ),
 
-    SizedBox(
-    width: 5,
-    height: 5,
-    ),
-    ClipRRect(
-    borderRadius: BorderRadius.circular(2),
-    child: Card(color: Color.fromARGB(1000, 221, 46, 68),
-    child: Text("07",style: TextStyle(fontSize: 80,),),
+                              ],
+                            ),
+                          ),
 
-    ),
-    )
-    ],
-    ),
-    ),
-    ],
-    ),
-    );
-    }
-    ),
-    ),
-    ],
-    ),
-    ),
+
+                        ),
+                      ),
+                    ),],)
+              );
+            }
         )
     );
+
   }
 }

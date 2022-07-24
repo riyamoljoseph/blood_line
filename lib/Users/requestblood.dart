@@ -1,5 +1,4 @@
 
-import 'package:blood_line/Users/map.dart';
 import 'package:blood_line/Users/stock.dart';
 import 'package:flutter/material.dart';
 
@@ -156,7 +155,7 @@ class _RequestBloodState extends State<RequestBlood> {
                         color: Color.fromARGB(1000, 221, 46, 68),
                         child: Text("SUBMIT"),
 
-                        onPressed: () {
+                        onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=>Stock()));
                         },
                         shape: new RoundedRectangleBorder(
                             borderRadius: new BorderRadius.circular(30.0)),
