@@ -1,5 +1,5 @@
 import 'package:blood_line/Users/donors.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:blood_line/Users/home.dart';
 import 'package:flutter/material.dart';
 
 class Reg extends StatefulWidget {
@@ -104,7 +104,7 @@ class _RegState extends State<Reg> {
                               child: Text("Register as Donor"),
                               color: Color.fromARGB(1000, 221, 46, 68),
                               onPressed: () {
-                                Navigator.push(context, MaterialPageRoute(builder: (context)=>Donor()));
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));
                               },
 
 

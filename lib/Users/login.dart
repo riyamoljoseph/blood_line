@@ -1,3 +1,4 @@
+import 'package:blood_line/Users/home.dart';
 import 'package:blood_line/Users/registration.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -153,7 +154,7 @@ class _LoginpageState extends State<Loginpage> {
                         ),
                       child: Text("Login"),
                       color: Colors.red,
-                        onPressed: () { Navigator.push(context, MaterialPageRoute(builder: (context)=>Reg()));
+                        onPressed: () { Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));
                         },
 
 
