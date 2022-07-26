@@ -22,7 +22,7 @@ class _DonorState extends State<Donor> {
   @override
   void initState() {
     super.initState();
-    _numberCtrl.text ="7306544247n ";
+    _numberCtrl.text ="7306544247 ";
   }
   Widget build(BuildContext context) {
     return DefaultTabController(
