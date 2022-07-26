@@ -1,5 +1,5 @@
-import 'package:blood_line/Users/donors.dart';
-import 'package:blood_line/Users/home.dart';
+
+import 'package:blood_line/ui%20design/Users/home.dart';
 import 'package:flutter/material.dart';
 
 class Reg extends StatefulWidget {

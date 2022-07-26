@@ -1,5 +1,8 @@
-import 'package:blood_line/Users/login.dart';
+
+import 'package:blood_line/bloc/loginbloc.dart';
+import 'package:blood_line/ui%20design/Users/login.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() => runApp( const AppHome());
 
@@ -16,7 +19,13 @@ class _AppHomeState extends State<AppHome> {
     super.initState();
   }
     Widget build(BuildContext context) {
-      return MaterialApp(
+      return MultiBlocProvider(providers:[
+        BlocProvider<AuthBloc>(create: (context) => AuthBloc()),
+      ],
+
+          child:
+
+        MaterialApp(
         title: 'Bloodline',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
@@ -24,6 +33,7 @@ class _AppHomeState extends State<AppHome> {
 
         ),
         home:Loginpage(),
+        )
       );
     }
   }

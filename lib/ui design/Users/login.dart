@@ -1,7 +1,12 @@
-import 'package:blood_line/Users/home.dart';
-import 'package:blood_line/Users/registration.dart';
+
+import 'package:blood_line/bloc/loginbloc.dart';
+import 'package:blood_line/helper/sharedpreferences.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'home.dart';
 
 class Loginpage extends StatefulWidget {
   const Loginpage({Key? key}) : super(key: key);
@@ -11,7 +16,18 @@ class Loginpage extends StatefulWidget {
 }
 
 class _LoginpageState extends State<Loginpage> {
+  var phoneController = TextEditingController();
+  var passwordController = TextEditingController();
   @override
+  var token=null;
+  void initState() {
+    super.initState();
+
+  }
+  initFunc() async{
+    token=await TempStorage.getToken();
+
+  }
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
@@ -71,6 +87,7 @@ class _LoginpageState extends State<Loginpage> {
                               .size
                               .width * 0.9,
                           child: TextField(
+                            controller: phoneController,
                             style: TextStyle(color: Colors.black),
                             decoration: new InputDecoration(
                               label: Text('Username'),
@@ -111,6 +128,7 @@ class _LoginpageState extends State<Loginpage> {
                                 .size
                                 .width * 0.9,
                             child: TextField(
+                              controller: passwordController,
                               style: TextStyle(color: Colors.black),
                               decoration: new InputDecoration(
                                 prefixIcon: IconButton(
@@ -152,13 +170,32 @@ class _LoginpageState extends State<Loginpage> {
                           borderRadius: BorderRadius.circular(15),
 
                         ),
-                      child: Text("Login"),
-                      color: Colors.red,
-                        onPressed: () { Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));
+                        onPressed: () {
+                          BlocProvider.of<AuthBloc>(context).add(CheckOTP(
+                            phonenumber: phoneController.text,
+                            password: passwordController.text, ));
                         },
+                        color:Colors.black,
+                        child:BlocConsumer<AuthBloc, AuthState>(
+                          builder: (context, state) {
 
+                            return Text(
+                              "Log in",
+                              style: TextStyle(fontSize: 14),
+                            );
 
+                          },
+                        listener: (context, state) {
+                            if( state is OtpChecked){
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));
+                            }
+                            else if(state is OtpError){
+                                  Fluttertoast.showToast(
+                                    msg: state.error,
+                              );}
+                            }
                     )
+                  )
                   )
                   ]
                   )

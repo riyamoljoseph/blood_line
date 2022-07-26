@@ -1,6 +1,7 @@
-import 'package:blood_line/Users/donors.dart';
-import 'package:blood_line/Users/registration.dart';
-import 'package:blood_line/Users/stock.dart';
+
+import 'package:blood_line/ui%20design/Users/donors.dart';
+import 'package:blood_line/ui%20design/Users/registration.dart';
+import 'package:blood_line/ui%20design/Users/stock.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
