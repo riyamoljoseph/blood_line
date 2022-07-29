@@ -18,9 +18,7 @@ class _SearchState extends State<Search> {
             itemCount: 8,
             itemBuilder: (BuildContext context, int index) {
               return InkWell(
-                  onTap:(){
-                    // Navigator.push(context, MaterialPageRoute(builder: (context)=>));
-                  },
+
                   child: Column(children: [
 
                     Padding(

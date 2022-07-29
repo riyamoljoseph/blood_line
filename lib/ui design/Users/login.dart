@@ -1,6 +1,7 @@
 
 import 'package:blood_line/bloc/loginbloc.dart';
 import 'package:blood_line/helper/sharedpreferences.dart';
+import 'package:blood_line/ui%20design/Users/firstregistration.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -162,7 +163,15 @@ class _LoginpageState extends State<Loginpage> {
 
                           ),
                         ),
-                        SizedBox(height: 40,),
+                        Row(
+                          children:[
+                            SizedBox(width: 180,height: 15,),
+                            Text('forgot password ?',style:TextStyle(color: Colors.black,fontSize: 7
+                                ,
+                                fontFamily:"fontS"
+                            ),),
+                          ],),
+                        SizedBox(height: 30,),
                   Container(
                     height: MediaQuery.of(context).size.height*0.05,
                     child:MaterialButton(
@@ -175,7 +184,7 @@ class _LoginpageState extends State<Loginpage> {
                             phonenumber: phoneController.text,
                             password: passwordController.text, ));
                         },
-                        color:Colors.black,
+                        color:Color.fromARGB(1000, 221, 46, 68),
                         child:BlocConsumer<AuthBloc, AuthState>(
                           builder: (context, state) {
 
@@ -184,7 +193,8 @@ class _LoginpageState extends State<Loginpage> {
                               style: TextStyle(fontSize: 14),
                             );
 
-                          },
+
+                            },
                         listener: (context, state) {
                             if( state is OtpChecked){
                               Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));
@@ -195,6 +205,7 @@ class _LoginpageState extends State<Loginpage> {
                               );}
                             }
                     )
+
                   )
                   )
                   ]
@@ -203,7 +214,22 @@ class _LoginpageState extends State<Loginpage> {
                 ),
 
 
-                )
+                ),
+
+              Row(
+          children: <Widget>[
+          const Text('Does not have account?'),
+          TextButton(
+            child: const Text(
+              'Register>>',
+              style: TextStyle(fontSize: 13),
+            ),
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>Register()));
+            },
+          )
+          ]
+      )
               ],
             ),
           )
