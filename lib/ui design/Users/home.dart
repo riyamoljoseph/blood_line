@@ -1,6 +1,7 @@
 
 import 'package:blood_line/ui%20design/Users/donors.dart';
 import 'package:blood_line/ui%20design/Users/registration.dart';
+import 'package:blood_line/ui%20design/Users/requestblood.dart';
 import 'package:blood_line/ui%20design/Users/search.dart';
 import 'package:blood_line/ui%20design/Users/stock.dart';
 import 'package:fab_circular_menu/fab_circular_menu.dart';
@@ -49,7 +50,7 @@ class _HomeState extends State<Home> {
             child: const Text('A-',
                 style: TextStyle(fontSize: 20, color: Colors.white)),
           ),
-          SizedBox(height:1),
+          SizedBox(height:5),
           TextButton(
             style: TextButton.styleFrom(
               textStyle: const TextStyle(fontSize: 20),
@@ -61,7 +62,7 @@ class _HomeState extends State<Home> {
             child: const Text('B+',
                 style: TextStyle(fontSize: 20, color: Colors.white)),
           ),
-          SizedBox(height:1),
+          SizedBox(height:5),
           TextButton(
             style: TextButton.styleFrom(
               textStyle: const TextStyle(fontSize: 20),
@@ -73,7 +74,7 @@ class _HomeState extends State<Home> {
             child: const Text('B-',
                 style: TextStyle(fontSize: 20, color: Colors.white)),
           ),
-          SizedBox(height:1),
+          SizedBox(height:5),
           TextButton(
             style: TextButton.styleFrom(
               textStyle: const TextStyle(fontSize: 20),
@@ -85,7 +86,7 @@ class _HomeState extends State<Home> {
             child: const Text('AB+',
                 style: TextStyle(fontSize: 20, color: Colors.white)),
           ),
-          SizedBox(height:1),
+          SizedBox(height:5),
           TextButton(
             style: TextButton.styleFrom(
               textStyle: const TextStyle(fontSize: 20),
@@ -97,7 +98,7 @@ class _HomeState extends State<Home> {
             child: const Text('AB-',
                 style: TextStyle(fontSize: 20, color: Colors.white)),
           ),
-          SizedBox(height:1),
+          SizedBox(height:5),
           TextButton(
             style: TextButton.styleFrom(
               textStyle: const TextStyle(fontSize: 20),
@@ -109,7 +110,7 @@ class _HomeState extends State<Home> {
             child: const Text('O+',
                 style: TextStyle(fontSize: 20, color: Colors.white)),
           ),
-
+          SizedBox(height:5),
           TextButton(
             style: TextButton.styleFrom(),
             onPressed: () {
@@ -119,9 +120,9 @@ class _HomeState extends State<Home> {
             child: const Text('O-',
                 style: TextStyle(fontSize: 20, color: Colors.white)),
           ),
-          SizedBox(height:1),
+          SizedBox(height:5),
         ]),
-      ),
+    ),
       drawer: Drawer(
         child: ListView(
           // Important: Remove any padding from the ListView.
@@ -129,7 +130,7 @@ class _HomeState extends State<Home> {
           children: <Widget>[
             UserAccountsDrawerHeader(
               accountName: Text("Minimwon"),
-              accountEmail: Text("abhishekm977@gmail.com"),
+              accountEmail: Text("minimwon@gmail.com"),
               currentAccountPicture: CircleAvatar(
                 backgroundColor: Color.fromARGB(1000, 221, 46, 68),
                 child: Text(
@@ -147,7 +148,7 @@ class _HomeState extends State<Home> {
               },
             ),
             ListTile(
-              leading: Icon(Icons.home),
+              leading: Icon(Icons.how_to_reg),
               title: Text("Donor Reg"),
               onTap: () {
                 Navigator.push(
@@ -170,76 +171,19 @@ class _HomeState extends State<Home> {
                     context, MaterialPageRoute(builder: (context) => Donor()));
               },
             ),
+
+            ListTile(
+              leading: Icon(Icons.bloodtype_sharp),
+              title: Text("Request Blood"),
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => RequestBlood()));
+              },
+            ),
           ],
         ),
       ),
 
-      // floatingActionButton: FabCircularMenu(
-      //     children: [
-      //
-      //
-      //       TextButton(
-      //         style: TextButton.styleFrom(
-      //           textStyle: const TextStyle(fontSize: 20),
-      //         ),
-      //         onPressed: null,
-      //         child: const Text('A+', style:TextStyle(fontSize: 20,color: Colors.white)),
-      //       ),
-      //       TextButton(
-      //         style: TextButton.styleFrom(
-      //           textStyle: const TextStyle(fontSize: 20),
-      //         ),
-      //         onPressed: null,
-      //         child: const Text('A-', style:TextStyle(fontSize: 20,color: Colors.white)),
-      //       ),
-      //       TextButton(
-      //         style: TextButton.styleFrom(
-      //           textStyle: const TextStyle(fontSize: 20),
-      //         ),
-      //         onPressed: null,
-      //         child: const Text('B+', style:TextStyle(fontSize: 20,color: Colors.white)),
-      //       ),
-      //       TextButton(
-      //         style: TextButton.styleFrom(
-      //           textStyle: const TextStyle(fontSize: 20),
-      //         ),
-      //         onPressed: null,
-      //         child: const Text('B-', style:TextStyle(fontSize: 20,color: Colors.white)),
-      //       ),
-      //       TextButton(
-      //         style: TextButton.styleFrom(
-      //           textStyle: const TextStyle(fontSize: 20),
-      //         ),
-      //         onPressed: null,
-      //         child: const Text('AB+', style:TextStyle(fontSize: 20,color: Colors.white)),
-      //       ),
-      //       TextButton(
-      //         style: TextButton.styleFrom(
-      //           textStyle: const TextStyle(fontSize: 20),
-      //         ),
-      //         onPressed: null,
-      //         child: const Text('AB-', style:TextStyle(fontSize: 20,color: Colors.white)),
-      //       ),
-      //       TextButton(
-      //         style: TextButton.styleFrom(
-      //           textStyle: const TextStyle(fontSize: 20),
-      //         ),
-      //         onPressed: null,
-      //         child: const Text('O+', style:TextStyle(fontSize: 20,color: Colors.white)),
-      //       ),
-      //       TextButton(
-      //         style: TextButton.styleFrom(
-      //
-      //         ),
-      //         onPressed: null,
-      //         child: const Text('O-', style:TextStyle(fontSize: 20,color: Colors.white)),
-      //       ),
-      //
-      //
-      //
-      //
-      //     ]
-      // )
     );
   }
 }

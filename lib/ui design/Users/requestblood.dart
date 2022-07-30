@@ -10,17 +10,19 @@ class RequestBlood extends StatefulWidget {
 }
 
 class _RequestBloodState extends State<RequestBlood> {
-  // String dropdownvalue = 'Item 1';
-  //
-  // // List of items in our dropdown menu
-  // var items = [
-  //   'Item 1',
-  //   'Item 2',
-  //   'Item 3',
-  //   'Item 4',
-  //   'Item 5',
-  // ];
+  DateTime currentDate = DateTime.now();
 
+  Future<void> _selectDate(BuildContext context) async {
+    final DateTime? pickedDate = await showDatePicker(
+        context: context,
+        initialDate: currentDate,
+        firstDate: DateTime(2015),
+        lastDate: DateTime(2050));
+    if (pickedDate != null && pickedDate != currentDate)
+      setState(() {
+        currentDate = pickedDate;
+      });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,32 +63,6 @@ class _RequestBloodState extends State<RequestBlood> {
                       Container(
                         child: Column(
                           children: <Widget>[
-                            // Container(
-                            //   padding: EdgeInsets.only(top: 20.0),
-                            //   child: DropdownButton(
-                            //
-                            //     // Initial Value
-                            //     value: dropdownvalue,
-                            //
-                            //     // Down Arrow Icon
-                            //     icon: const Icon(Icons.keyboard_arrow_down),
-                            //
-                            //     // Array list of items
-                            //     items: items.map((String items) {
-                            //       return DropdownMenuItem(
-                            //         value: items,
-                            //         child: Text(items),
-                            //       );
-                            //     }).toList(),
-                            //     // After selecting the desired option,it will
-                            //     // change button value to selected value
-                            //     onChanged: (String? newValue) {
-                            //       setState(() {
-                            //         dropdownvalue = newValue!;
-                            //       });
-                            //     },
-                            //   ),
-                            // ),
                             SizedBox(
                               height: 10.0,
                             ),
@@ -118,18 +94,19 @@ class _RequestBloodState extends State<RequestBlood> {
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
                           children: <Widget>[
-                            IconButton(
-                              onPressed: (){} ,
-                              icon: Icon(
-                                  Icons.calendar_month_outlined),
-                              color: Color.fromARGB(1000, 221, 46, 68),
-                            ),
+
+                          IconButton(
+                            onPressed: () => _selectDate(context),
+                            icon: Icon(
+                            Icons.calendar_month_outlined),
+                            color: Color.fromARGB(1000, 221, 46, 68),
+                                    ),
                                 Text(
-                              "<< Pick up a Due Date",
+                              "<< Select Date",
                               style: TextStyle(
                                   color: Colors.black54, fontSize: 15.0),
-                            )
-
+                            ),
+                            //Text(currentDate.toString()),
                           ],
                         ),
                       ),
