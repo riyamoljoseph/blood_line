@@ -1,6 +1,16 @@
+<<<<<<< HEAD
 import 'package:blood_line/ui%20design/Users/registration.dart';
 import 'package:blood_line/ui%20design/Users/stock.dart';
 import 'package:blood_line/ui%20design/Users/userregistration.dart';
+=======
+
+import 'package:blood_line/ui%20design/Users/donors.dart';
+import 'package:blood_line/ui%20design/Users/registration.dart';
+import 'package:blood_line/ui%20design/Users/requestblood.dart';
+import 'package:blood_line/ui%20design/Users/search.dart';
+import 'package:blood_line/ui%20design/Users/stock.dart';
+import 'package:fab_circular_menu/fab_circular_menu.dart';
+>>>>>>> 91962a5f13c40b5184633a4d3d8b466b076e9b59
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -15,11 +25,110 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Home")),
-      body: Center(child: Text(
-        'A drawer is an invisible side screen.',
-        style: TextStyle(fontSize: 20.0),
-      )
-      ),
+      body: Center(
+
+        child:
+        FabCircularMenu(alignment: Alignment.center,fabSize: 100, children: [
+
+          TextButton(
+            style: TextButton.styleFrom(
+              textStyle: const TextStyle(fontSize: 20),
+            ),
+
+
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Search()));
+            },
+            child: const Text('A+',
+                style: TextStyle(fontSize: 20, color: Colors.white)),
+          ),
+          SizedBox(height: 5),
+
+          TextButton(
+            style: TextButton.styleFrom(
+              textStyle: const TextStyle(fontSize: 20),
+            ),
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Search()));
+            },
+            child: const Text('A-',
+                style: TextStyle(fontSize: 20, color: Colors.white)),
+          ),
+          SizedBox(height:5),
+          TextButton(
+            style: TextButton.styleFrom(
+              textStyle: const TextStyle(fontSize: 20),
+            ),
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Search()));
+            },
+            child: const Text('B+',
+                style: TextStyle(fontSize: 20, color: Colors.white)),
+          ),
+          SizedBox(height:5),
+          TextButton(
+            style: TextButton.styleFrom(
+              textStyle: const TextStyle(fontSize: 20),
+            ),
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Search()));
+            },
+            child: const Text('B-',
+                style: TextStyle(fontSize: 20, color: Colors.white)),
+          ),
+          SizedBox(height:5),
+          TextButton(
+            style: TextButton.styleFrom(
+              textStyle: const TextStyle(fontSize: 20),
+            ),
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Search()));
+            },
+            child: const Text('AB+',
+                style: TextStyle(fontSize: 20, color: Colors.white)),
+          ),
+          SizedBox(height:5),
+          TextButton(
+            style: TextButton.styleFrom(
+              textStyle: const TextStyle(fontSize: 20),
+            ),
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Search()));
+            },
+            child: const Text('AB-',
+                style: TextStyle(fontSize: 20, color: Colors.white)),
+          ),
+          SizedBox(height:5),
+          TextButton(
+            style: TextButton.styleFrom(
+              textStyle: const TextStyle(fontSize: 20),
+            ),
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Search()));
+            },
+            child: const Text('O+',
+                style: TextStyle(fontSize: 20, color: Colors.white)),
+          ),
+          SizedBox(height:5),
+          TextButton(
+            style: TextButton.styleFrom(),
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Search()));
+            },
+            child: const Text('O-',
+                style: TextStyle(fontSize: 20, color: Colors.white)),
+          ),
+          SizedBox(height:5),
+        ]),
+    ),
       drawer: Drawer(
         child: ListView(
           // Important: Remove any padding from the ListView.
@@ -27,9 +136,9 @@ class _HomeState extends State<Home> {
           children: <Widget>[
             UserAccountsDrawerHeader(
               accountName: Text("Minimwon"),
-              accountEmail: Text("abhishekm977@gmail.com"),
+              accountEmail: Text("minimwon@gmail.com"),
               currentAccountPicture: CircleAvatar(
-                backgroundColor: Colors.orange,
+                backgroundColor: Color.fromARGB(1000, 221, 46, 68),
                 child: Text(
                   "A",
                   style: TextStyle(fontSize: 40.0),
@@ -37,32 +146,54 @@ class _HomeState extends State<Home> {
               ),
             ),
             ListTile(
-              leading: Icon(Icons.home), title: Text("Home"),
+              leading: Icon(Icons.home),
+              title: Text("Home"),
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Home()));
               },
             ),
             ListTile(
-              leading: Icon(Icons.home), title: Text("Donor Reg"),
+              leading: Icon(Icons.how_to_reg),
+              title: Text("Donor Reg"),
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>Reg()));
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Reg()));
               },
             ),
             ListTile(
-              leading: Icon(Icons.settings), title: Text("Stock"),
+              leading: Icon(Icons.settings),
+              title: Text("Stock"),
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>Stock()));
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Stock()));
               },
             ),
             ListTile(
-              leading: Icon(Icons.contacts), title: Text("Donor"),
+              leading: Icon(Icons.contacts),
+              title: Text("Donor"),
               onTap: () {
+<<<<<<< HEAD
                 Navigator.push(context, MaterialPageRoute(builder: (context)=>userreg()));
+=======
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Donor()));
+              },
+            ),
+
+            ListTile(
+              leading: Icon(Icons.bloodtype_sharp),
+              title: Text("Request Blood"),
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => RequestBlood()));
+>>>>>>> 91962a5f13c40b5184633a4d3d8b466b076e9b59
               },
             ),
           ],
         ),
       ),
+
     );
   }
 }

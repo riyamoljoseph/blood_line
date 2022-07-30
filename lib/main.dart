@@ -1,6 +1,11 @@
 import 'package:blood_line/bloc/loginbloc.dart';
+<<<<<<< HEAD
 import 'package:blood_line/bloc/registrationbloc.dart';
 import 'package:blood_line/ui%20design/Users/userregistration.dart';
+=======
+import 'package:blood_line/ui%20design/Users/home.dart';
+import 'package:blood_line/ui%20design/Users/login.dart';
+>>>>>>> 91962a5f13c40b5184633a4d3d8b466b076e9b59
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

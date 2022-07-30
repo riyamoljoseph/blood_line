@@ -12,15 +12,13 @@ class _SearchState extends State<Search> {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Color.fromARGB(1000, 221, 46, 68),
-          title: Text("Search"),
+          title: Text("Stock available"),
         ),
         body: ListView.builder(
             itemCount: 8,
             itemBuilder: (BuildContext context, int index) {
               return InkWell(
-                  onTap:(){
-                    // Navigator.push(context, MaterialPageRoute(builder: (context)=>));
-                  },
+
                   child: Column(children: [
 
                     Padding(
