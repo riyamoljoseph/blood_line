@@ -1,6 +1,6 @@
-import 'package:blood_line/Users/donors.dart';
-import 'package:blood_line/Users/registration.dart';
-import 'package:blood_line/Users/stock.dart';
+import 'package:blood_line/ui%20design/Users/registration.dart';
+import 'package:blood_line/ui%20design/Users/stock.dart';
+import 'package:blood_line/ui%20design/Users/userregistration.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -57,7 +57,7 @@ class _HomeState extends State<Home> {
             ListTile(
               leading: Icon(Icons.contacts), title: Text("Donor"),
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>Donor()));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>userreg()));
               },
             ),
           ],

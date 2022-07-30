@@ -4,13 +4,11 @@ import 'package:blood_line/helper/sharedpreferences.dart';
 
 class WebClient {
 
-//static const ip = "http://192.168.52.245:5555";
-  //static const ip = "http://192.168.49.29:5555";
-//  static const ip="https://periyarproject.herokuapp.com";
 
+//  static const ip="https://periyarproject.herokuapp.com";
 //static const ip = "http://192.168.48.145:5555";
-  static const ip = "http://192.168.55.214:5000";
-  //static const ip="https://periyarproject.herokuapp.com";
+ static const ip = "http://192.168.48.120:5000";
+ //static const ip="https://periyarproject.herokuapp.com";
 
 
   static Future<dynamic> post(url, data) async {
@@ -22,7 +20,6 @@ class WebClient {
     print(sendData);
 
     var body = json.encode(sendData);
-
     var response = await http.post(
       Uri.parse(ip + url),
       headers: {"Content-Type": "application/json", "token": token ?? ""},
@@ -39,7 +36,7 @@ class WebClient {
       print("ssshhh");
       var error = {
         "status": false,
-        "msg": "Invalid Request",
+        "msg": "Invalid Requesttt",
       };
       return error;
 
@@ -59,7 +56,7 @@ class WebClient {
       print( response.statusCode.toString()+"msfgh");
       var error = {
         "status": false,
-        "msg": "Invalid Request",
+        "msg": "Invalid Requestt",
       };
       return error;
     }

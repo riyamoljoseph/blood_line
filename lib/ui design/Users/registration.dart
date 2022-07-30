@@ -7,9 +7,11 @@ class Reg extends StatefulWidget {
 
   @override
   State<Reg> createState() => _RegState();
+
 }
 
 class _RegState extends State<Reg> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -25,7 +25,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     await Repository().login(url: '/user/login', data: data);
     if (loginModel.status == true) {
       await TempStorage.addToken(loginModel.token.toString());
-      //await TempStorage.addRole(loginModel.role.toString());
+      await TempStorage.addRole(loginModel.data!.role.toString());
       emit(OtpChecked());
     } else {
       emit(OtpError(error: loginModel.msg.toString()));
